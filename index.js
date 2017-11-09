@@ -3,6 +3,8 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 
+require('./mongoose')(process.env.DB_URL)
+
 const app = express()
 
 app.use(require('./cors'))
@@ -15,8 +17,6 @@ app.use('/auth', require('./routes/auth'))
 app.use('/api', require('./routes/tasks'))
 
 console.log(`Connecting Tasks API db on url ${process.env.DB_URL}`)
-
-require('./mongoose')(process.env.DB_URL)
 
 console.log(`Starting Tasks API on port ${process.env.PORT}`)
 
