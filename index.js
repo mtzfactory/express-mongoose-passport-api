@@ -16,9 +16,7 @@ app.use('/api', require('./routes/tasks'))
 
 console.log(`Connecting Tasks API db on url ${process.env.DB_URL}`)
 
-const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.DB_URL, { useMongoClient: true })
+require('./mongoose')(process.env.DB_URL)
 
 console.log(`Starting Tasks API on port ${process.env.PORT}`)
 
