@@ -1,0 +1,163 @@
+{
+	"variables": [],
+	"info": {
+		"name": "express-mongoose-passport-api",
+		"_postman_id": "a302a46e-8afd-c7c2-ca80-6f01cfd841e5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/tasks no Auth",
+			"request": {
+				"url": "http://localhost:3000/api/tasks",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/register",
+			"request": {
+				"url": "http://localhost:3000/auth/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"ricardo\",\n\t\"password\": \"1234567890\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/login",
+			"request": {
+				"url": "http://localhost:3000/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"ricardo\",\n\t\"password\": \"1234567890\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tasks list with Token",
+			"request": {
+				"url": "http://localhost:3000/api/tasks",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDQ0YWQ2ZjRmNDY1MzA4NmFkYmQyMiIsInVzZXJuYW1lIjoicmljYXJkbyIsImlhdCI6MTUxMDIzMTc4M30.WPdqNbcL3hgHJ_SF-Yjtn1O5-XjCC3ykvcdqC8DPBqU",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tasks new Task with Token",
+			"request": {
+				"url": "http://localhost:3000/api/tasks",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDQ0YWQ2ZjRmNDY1MzA4NmFkYmQyMiIsInVzZXJuYW1lIjoicmljYXJkbyIsImlhdCI6MTUxMDIzMTc4M30.WPdqNbcL3hgHJ_SF-Yjtn1O5-XjCC3ykvcdqC8DPBqU",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"comprar peras\",\n\t\"done\": false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tasks/ delete Task with Token",
+			"request": {
+				"url": "http://localhost:3000/api/tasks/5a0470e061e43a3bd42f0697",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDQ0YWQ2ZjRmNDY1MzA4NmFkYmQyMiIsInVzZXJuYW1lIjoicmljYXJkbyIsImlhdCI6MTUxMDIzMTc4M30.WPdqNbcL3hgHJ_SF-Yjtn1O5-XjCC3ykvcdqC8DPBqU",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tasks update with Token",
+			"request": {
+				"url": "http://localhost:3000/api/tasks/5a0470dc61e43a3bd42f0696",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDQ0YWQ2ZjRmNDY1MzA4NmFkYmQyMiIsInVzZXJuYW1lIjoicmljYXJkbyIsImlhdCI6MTUxMDIzMTc4M30.WPdqNbcL3hgHJ_SF-Yjtn1O5-XjCC3ykvcdqC8DPBqU",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"ya he comprado cebollas\",\n\t\"done\": true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/tasks/ retrieve by task-id with Token",
+			"request": {
+				"url": "http://localhost:3000/api/tasks/5a0470dc61e43a3bd42f0696",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMDQ0YWQ2ZjRmNDY1MzA4NmFkYmQyMiIsInVzZXJuYW1lIjoicmljYXJkbyIsImlhdCI6MTUxMDIzMTc4M30.WPdqNbcL3hgHJ_SF-Yjtn1O5-XjCC3ykvcdqC8DPBqU",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
