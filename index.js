@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 
+console.log(`Connecting Tasks API db on url ${process.env.DB_URL}`)
 require('./mongoose')(process.env.DB_URL)
 
 const app = express()
@@ -16,10 +17,7 @@ app.use('/auth', require('./routes/auth'))
 
 app.use('/api', require('./routes/tasks'))
 
-console.log(`Connecting Tasks API db on url ${process.env.DB_URL}`)
-
 console.log(`Starting Tasks API on port ${process.env.PORT}`)
-
 app.listen(process.env.PORT, () => console.log('Tasks API is up'))
 
 process.on('SIGINT', () => {
