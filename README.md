@@ -29,7 +29,11 @@ Para comprobar que el servidor funciona correctamente, puedes importar a *Postma
 
 Ejemplo de uso:
 
+#1
+
 ![imagen-2](img/image-2.png)
+
+#2
 
 ![imagen-3](img/image-3.png)
 
